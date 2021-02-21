@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1267
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLProxy", "src\MLProxy\MLProxy.csproj", "{C5EFE0A3-2832-49A4-9C4C-4B03BBE1BD8C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02F8F6CA-E665-405A-B034-E1D17179B688}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{3892625F-890B-4E8E-9382-688A4AA0A0F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLProxy.Tests", "test\MLProxy.Tests\MLProxy.Tests.csproj", "{B3CEBD06-1C7B-49B9-B8CD-215503E593B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5EFE0A3-2832-49A4-9C4C-4B03BBE1BD8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5EFE0A3-2832-49A4-9C4C-4B03BBE1BD8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5EFE0A3-2832-49A4-9C4C-4B03BBE1BD8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5EFE0A3-2832-49A4-9C4C-4B03BBE1BD8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3CEBD06-1C7B-49B9-B8CD-215503E593B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3CEBD06-1C7B-49B9-B8CD-215503E593B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3CEBD06-1C7B-49B9-B8CD-215503E593B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3CEBD06-1C7B-49B9-B8CD-215503E593B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C5EFE0A3-2832-49A4-9C4C-4B03BBE1BD8C} = {02F8F6CA-E665-405A-B034-E1D17179B688}
+		{B3CEBD06-1C7B-49B9-B8CD-215503E593B7} = {3892625F-890B-4E8E-9382-688A4AA0A0F1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C186C3C9-5243-47A1-884A-BB50179D4B75}
+	EndGlobalSection
+EndGlobal
