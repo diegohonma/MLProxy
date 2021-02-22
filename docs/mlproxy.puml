@@ -1,0 +1,52 @@
+@startuml "MLProxy"
+GetMetrics -right- [MLProxy] 
+Proxy -left- [MLProxy]
+
+database "Mongo" {
+  [BlockByIp]
+  [BlockByPath]
+  [BlockByIpAndPath]
+}
+
+database "Sql" {
+  [Metrics]
+}
+
+[MLProxy] -down--> [Metrics]
+[MLProxy] -down--> [api.mercadolibre.com]
+[MLProxy] -down--> [BlockByIp]
+[MLProxy] -down--> [BlockByPath]
+[MLProxy] -down--> [BlockByIpAndPath]
+@enduml
+
+@startuml
+title Fluxo do MLProxy
+
+participant "Request" as request
+participant "MLProxy" as mlproxy
+participant "Mongo DB" as mongo
+participant "SQL Server" as sql
+participant "api.mercadolibre.com" as api
+
+request -> mlproxy: Realiza o request para o proxy
+mlproxy -> sql: Insere uma nova métrica
+mlproxy -> mongo: Verifica se o request está bloqueado ip, path ou ip+path
+mongo -> mlproxy
+mlproxy -> api: Envia o request para a api
+api -> mlproxy
+mlproxy -> request
+@enduml
+
+@startuml
+title Fluxo do MLProxy para consulta de métricas
+
+participant "Request" as request
+participant "MLProxy" as mlproxy
+participant "SQL Server" as sql
+
+request -> mlproxy: Realiza o request para consultar as métricas
+mlproxy -> sql: Realiza a consulta de métricas
+sql -> mlproxy
+mlproxy -> request: Agrupa as métricas e retorna o response
+
+@enduml
